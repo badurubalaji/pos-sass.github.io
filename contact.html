@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <title>Contact Us - POS Pro | Request a Demo or Get Support</title>
+    <meta name="description" content="Contact POS Pro for support, inquiries, or to request a free demo of our retail POS system. We're here to help you get started.">
+    <meta name="keywords" content="contact POS Pro, POS demo request, retail POS support, POS inquiries, sign up POS Pro">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'pos-accent': '#10bc69',      // Primary Green
+                        'pos-heading': '#5f687b',    // Heading Color
+                        'pos-text': '#444444',        // Default Text Color
+                        'pos-teal': '#14b8a6',        // Secondary Accent (Teal)
+                        'pos-surface': '#ffffff',     // Surface Color
+                        'pos-background': '#ffffff',  // Background Color
+                        'pos-contrast': '#ffffff',    // Contrast for text on dark/accented backgrounds
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { color: #444444; background-color: #ffffff; } /* --default-color & --background-color */
+        h1, h2, h3, h4, h5, h6 { color: #5f687b; } /* --heading-color */
+        .surface-color { background-color: #ffffff; } /* --surface-color */
+         ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* Chat Icon Styling */
+        #chat-icon-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        #chat-icon {
+            background-color: #10bc69; /* pos-accent */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease-in-out;
+        }
+        #chat-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Welcome Popup Styling */
+        #welcome-chat-popup {
+            position: fixed;
+            bottom: 90px; /* Above chat icon */
+            right: 20px;
+            width: 300px;
+            background-color: #ffffff; /* pos-surface */
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            padding: 20px;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            color: #444444; /* pos-text */
+        }
+        #welcome-chat-popup.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #welcome-chat-popup h4 {
+            color: #5f687b; /* pos-heading */
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        #close-popup-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #888;
+        }
+        #close-popup-button:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="bg-pos-surface shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="assets/logo.webp" alt="POS Pro Logo" class="h-10 w-auto">
+                        <span class="text-2xl font-bold text-pos-heading">POS Pro</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="features.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                    <a href="why-pos-pro.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Why POS Pro?</a>
+                    <a href="pricing.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing (Free Beta)</a>
+                    <a href="contact.html" class="bg-green-100 text-pos-accent font-semibold px-3 py-2 rounded-md text-sm hover:bg-green-200 transition-colors">Contact</a>
+                </div>
+                 <div class="hidden md:block">
+                     <a href="http://demo.pos-sass.com" target="_blank" class="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80 transition-colors">
+                        <i class="fas fa-laptop-code mr-2"></i> Try Demo App
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pos-accent">
+                        <span class="sr-only">Open main menu</span>
+                        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-pos-surface shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="features.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="why-pos-pro.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Why POS Pro?</a>
+                <a href="pricing.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Pricing (Free Beta)</a>
+                <a href="contact.html" class="bg-green-100 text-pos-accent block px-3 py-2 rounded-md text-base font-semibold">Contact</a>
+                 <a href="http://demo.pos-sass.com" target="_blank" class="mt-2 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
+                    <i class="fas fa-laptop-code mr-2"></i> Try Demo App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-pos-teal text-pos-contrast py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-pos-contrast">Get in Touch or Request a Demo</h1>
+            <p class="text-lg sm:text-xl text-teal-100 max-w-3xl mx-auto">
+                We're excited to hear from you! Whether you have questions, need support, or want to see POS Pro in action, fill out the form below or use our direct contact details.
+            </p>
+        </div>
+    </header>
+
+    <main class="py-12 md:py-20 bg-pos-background">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+                <div class="bg-pos-surface p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl font-semibold text-pos-heading mb-6">Contact Information</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-2xl text-pos-accent mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-medium text-pos-heading">Email Us</h3>
+                                <p class="text-pos-text">For general inquiries: <a href="mailto:info@pos-sass.com" class="text-pos-accent hover:underline">info@pos-sass.com</a></p>
+                                <p class="text-pos-text">For support: <a href="mailto:support@pos-sass.com" class="text-pos-accent hover:underline">support@pos-sass.com</a></p>
+                                <p class="text-pos-text">For demo requests: <a href="mailto:demo@pos-sass.com" class="text-pos-accent hover:underline">demo@pos-sass.com</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-whatsapp-alt text-2xl text-pos-accent mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-medium text-pos-heading">Whatsapp</h3>
+                                <p class="text-pos-text"> +91 8494979799</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-2xl text-pos-accent mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-medium text-pos-heading">Our Location </h3>
+                                <p class="text-pos-text">AShu Labs</p>
+                                <p class="text-pos-text">Bengaluru -560066</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-8 text-pos-text">We typically respond to inquiries within 24 business hours.</p>
+                </div>
+
+                <div id="demo-request" class="bg-pos-surface p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl font-semibold text-pos-heading mb-6">Send Us a Message or Request a Demo</h2>
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6" id="signup-form">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                        </p>
+
+                        <div>
+                            <label for="full-name" class="block text-sm font-medium text-pos-heading">Full Name</label>
+                            <input type="text" name="full-name" id="full-name" autocomplete="name" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pos-accent focus:border-pos-accent sm:text-sm text-pos-text">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-pos-heading">Email Address</label>
+                            <input type="email" name="email" id="email" autocomplete="email" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pos-accent focus:border-pos-accent sm:text-sm text-pos-text">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-pos-heading">Phone Number (Optional)</label>
+                            <input type="tel" name="phone" id="phone" autocomplete="tel"
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pos-accent focus:border-pos-accent sm:text-sm text-pos-text">
+                        </div>
+                        <div>
+                            <label for="business-name" class="block text-sm font-medium text-pos-heading">Business Name</label>
+                            <input type="text" name="business-name" id="business-name" autocomplete="organization" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pos-accent focus:border-pos-accent sm:text-sm text-pos-text">
+                        </div>
+                        <div>
+                            <label for="retail-type" class="block text-sm font-medium text-pos-heading">Type of Retail Business</label>
+                            <select id="retail-type" name="retail-type" required
+                                    class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-pos-accent focus:border-pos-accent sm:text-sm rounded-md text-pos-text">
+                                <option value="">Select type...</option>
+                                <option value="Fashion Boutique">Fashion Boutique</option>
+                                <option value="Grocery Store">Grocery Store</option>
+                                <option value="Electronics Shop">Electronics Shop</option>
+                                <option value="General Retail">General Retail</option>
+                                <option value="Cafe / Quick Service">Cafe / Quick Service</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-pos-heading">Message / Specific Questions / Demo Interest</label>
+                            <textarea id="message" name="message" rows="4" required
+                                      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pos-accent focus:border-pos-accent sm:text-sm text-pos-text"></textarea>
+                            <p class="mt-1 text-xs text-gray-500">Please specify if you're requesting a demo or general sign-up for Early Access.</p>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                    class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pos-accent transform hover:scale-105 transition-transform duration-300">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message / Request Demo
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="chat-icon-container">
+        <div id="chat-icon" title="Chat with us!">
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+
+    <div id="welcome-chat-popup" class="hidden">
+        <button id="close-popup-button" title="Close">&times;</button>
+        <h4>Welcome to POS Pro!</h4>
+        <p class="text-sm">We're excited to have you. Please let us know how we can help or fill out the contact form to get started!</p>
+    </div>
+
+
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="assets/logo.webp" alt="POS Pro Logo" class="h-10 w-auto filter brightness-0 invert">
+                        <span class="text-2xl font-bold text-pos-contrast">POS Pro</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-3">The all-in-one POS solution. Join our free beta!</p>
+                    <a href="mailto:support@pos-sass.com" class="text-sm text-slate-400 hover:text-pos-accent transition-colors"><i class="fas fa-envelope mr-2"></i>support@pos-sass.com</a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Home</a></li>
+                        <li><a href="features.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Features</a></li>
+                        <li><a href="why-pos-pro.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Why POS Pro?</a></li>
+                        <li><a href="pricing.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Stay Connected</h3>
+                     <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field-newsletter" class="flex">
+                        <input type="hidden" name="form-name" value="newsletter" />
+                        <p class="hidden">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field-newsletter" /></label>
+                        </p>
+                        <input type="email" name="email" id="footer-email" required class="w-full px-3 py-2 border border-slate-600 rounded-l-md text-sm text-slate-800 focus:ring-pos-accent focus:border-pos-accent outline-none bg-slate-100" placeholder="Your email">
+                        <button type="submit" class="px-4 py-2 border border-transparent rounded-r-md shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center">
+                <p class="text-sm text-slate-400">&copy; <span id="currentYear"></span> POS Pro (pos-sass.com). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // This script should ideally be in script.js, but for self-contained example:
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (mobileMenuButton && mobileMenu && menuIcon) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    } else {
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-times');
+                    }
+                });
+            }
+
+            // Set current year in footer
+            const yearSpan = document.getElementById('currentYear');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // REMOVED: Conceptual Contact Form JS submission, as Netlify will handle it.
+            // const contactForm = document.getElementById('signup-form');
+            // if (contactForm) {
+            //     contactForm.addEventListener('submit', function(event) { /* ... */ });
+            // }
+            
+            // Newsletter Form conceptual submission (can also be a Netlify form)
+            const newsletterForm = document.querySelector('footer form[name="newsletter"]'); // Target Netlify form
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(event) {
+                    // If you want to prevent default and show a JS message AFTER Netlify submission,
+                    // you'd need more complex JS, often involving checking Netlify's success state
+                    // or redirecting to a thank you page.
+                    // For simplicity with Netlify, often just let Netlify handle the redirect/message.
+                    // If you want a JS alert *before* Netlify takes over (which might be confusing):
+                    // const emailInput = newsletterForm.querySelector('input[type="email"]');
+                    // if (emailInput && emailInput.value) {
+                    //      alert('Subscribing ' + emailInput.value + ' to newsletter via Netlify...');
+                    // } else {
+                    //     event.preventDefault(); // Prevent submission if email is empty
+                    //     alert('Please enter a valid email address for the newsletter.');
+                    // }
+                });
+            }
+
+            // Chat Icon and Welcome Popup Logic
+            const chatIcon = document.getElementById('chat-icon');
+            const welcomePopup = document.getElementById('welcome-chat-popup');
+            const closePopupButton = document.getElementById('close-popup-button');
+
+            function playNotificationSound() {
+                if (typeof Tone !== 'undefined') {
+                    const synth = new Tone.Synth().toDestination();
+                    try {
+                        Tone.start(); 
+                        synth.triggerAttackRelease("C5", "8n", Tone.now());
+                        synth.triggerAttackRelease("E5", "8n", Tone.now() + 0.2);
+                        synth.triggerAttackRelease("G5", "8n", Tone.now() + 0.4);
+                    } catch (e) {
+                        console.warn("Tone.js sound issue.", e);
+                    }
+                } else {
+                    console.warn("Tone.js library not loaded.");
+                }
+            }
+
+            setTimeout(() => {
+                if (welcomePopup) {
+                    welcomePopup.classList.remove('hidden');
+                    welcomePopup.classList.add('visible');
+                    playNotificationSound();
+                }
+            }, 1500); 
+
+            if (chatIcon) {
+                chatIcon.addEventListener('click', () => {
+                    if (welcomePopup) {
+                        welcomePopup.classList.toggle('hidden');
+                        welcomePopup.classList.toggle('visible');
+                        if (welcomePopup.classList.contains('visible')) {
+                             playNotificationSound(); 
+                        }
+                    }
+                });
+            }
+
+            if (closePopupButton && welcomePopup) {
+                closePopupButton.addEventListener('click', () => {
+                    welcomePopup.classList.add('hidden');
+                    welcomePopup.classList.remove('visible');
+                });
+            }
+
+            // Active nav link styling
+            const navLinks = document.querySelectorAll('nav a');
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href').split('/').pop();
+                link.classList.remove('bg-green-100', 'text-pos-accent', 'font-semibold');
+                 if (!link.parentElement.classList.contains('flex-shrink-0') && !link.classList.contains('bg-pos-accent')) { // Check if it's not the logo or demo button
+                    link.classList.add('text-pos-text', 'hover:bg-gray-100', 'hover:text-pos-accent', 'font-medium');
+                }
+                if (linkPage === currentPage) {
+                    link.classList.remove('text-pos-text', 'hover:bg-gray-100', 'hover:text-pos-accent', 'font-medium');
+                    link.classList.add('bg-green-100', 'text-pos-accent', 'font-semibold');
+                }
+            });
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+            mobileNavLinks.forEach(link => {
+                const linkPage = link.getAttribute('href').split('/').pop();
+                link.classList.remove('bg-green-100', 'text-pos-accent', 'font-semibold');
+                if (!link.classList.contains('bg-pos-accent')) { // Check if it's not the demo button
+                    link.classList.add('text-pos-text', 'hover:bg-gray-100', 'hover:text-pos-accent');
+                }
+                if (linkPage === currentPage) {
+                     link.classList.remove('text-pos-text', 'hover:bg-gray-100', 'hover:text-pos-accent');
+                    link.classList.add('bg-green-100', 'text-pos-accent', 'font-semibold');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

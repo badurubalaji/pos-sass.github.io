@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Pro - Modern Retail POS | Free Early Access</title>
+    <meta name="description" content="Join POS Pro's Free Early Access Program! Shape the future of retail with our intuitive, cloud-based Point of Sale system. Perfect for small to medium businesses.">
+    <meta name="keywords" content="POS system, point of sale, retail POS, free POS, early access POS, cloud POS, inventory management, sales reporting, small business POS">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'pos-accent': '#10bc69',      // Primary Green (from your color scheme)
+                        'pos-heading': '#5f687b',    // Heading Color
+                        'pos-text': '#444444',        // Default Text Color
+                        'pos-teal': '#14b8a6',        // New Secondary Accent (Replaces Yellow - Tailwind Teal 500)
+                        'pos-surface': '#ffffff',     // Surface Color (usually white)
+                        'pos-background': '#ffffff',  // Background Color (usually white)
+                        'pos-contrast': '#ffffff',    // Contrast for text on dark/accented backgrounds
+                        // Keeping one old one for reference if needed during transition, can be removed
+                        'pos-indigo': '#4f46e5',
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(16, 188, 105, 0.85), rgba(12, 140, 78, 0.95)), url('https://placehold.co/1920x1080/e2e8f0/9ca3af?text=Retail+Store+Background')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        html { scroll-behavior: smooth; }
+        .hero-section { min-height: 70vh; }
+        body {
+            color: #444444; /* pos-text */
+            background-color: #ffffff; /* pos-background */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #5f687b; /* pos-heading */
+        }
+        .surface-color {
+            background-color: #ffffff; /* pos-surface */
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="bg-pos-surface shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="assets/logo.webp" alt="POS Pro Logo" class="h-10 w-auto">
+                        <span class="text-2xl font-bold text-pos-heading">POS Pro</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="bg-green-100 text-pos-accent font-semibold px-3 py-2 rounded-md text-sm hover:bg-green-200 transition-colors">Home</a>
+                    <a href="features.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                    <a href="why-pos-pro.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Why POS Pro?</a>
+                    <a href="pricing.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing (Free Beta)</a>
+                    <a href="contact.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                </div>
+
+                <div class="hidden md:block">
+                     <a href="http://demo.pos-sass.com" target="_blank" class="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80 transition-colors">
+                        <i class="fas fa-laptop-code mr-2"></i> Try Demo App
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pos-accent">
+                        <span class="sr-only">Open main menu</span>
+                        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-pos-surface shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="bg-green-100 text-pos-accent block px-3 py-2 rounded-md text-base font-semibold">Home</a>
+                <a href="features.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="why-pos-pro.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Why POS Pro?</a>
+                <a href="pricing.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Pricing (Free Beta)</a>
+                <a href="contact.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                 <a href="http://demo.pos-sass.com" target="_blank" class="mt-2 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
+                    <i class="fas fa-laptop-code mr-2"></i> Try Demo App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section bg-hero-pattern bg-cover bg-center flex items-center justify-center text-pos-contrast relative">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-20 md:py-32">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-pos-contrast">
+                <span class="block">Shape the Future of Retail:</span>
+                <span class="block text-pos-teal mt-2">Join POS Pro's Free Early Access!</span> </h1>
+            <p class="max-w-xl md:max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl font-light text-gray-100 mb-10">
+                We're building the ultimate Point of Sale solution for retail businesses, and we need your expertise! Use POS Pro for free, help us test stability, find bugs, and enjoy a full-featured system designed for growth.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="contact.html#demo-request" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-pos-accent bg-pos-contrast hover:bg-gray-100 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-handshake mr-2"></i> Request a Demo
+                </a>
+                <a href="features.html" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-pos-contrast bg-pos-teal hover:bg-opacity-80 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-star mr-2"></i> Explore Features
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="why-join" class="py-16 md:py-24 bg-pos-surface">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-pos-heading">Why Join Our Early Access Program?</h2>
+                    <p class="mt-4 text-lg text-pos-text max-w-2xl mx-auto">Be a part of something special. Your participation directly impacts the future of POS Pro.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <div class="bg-green-100 p-4 rounded-full mb-6"> 
+                            <i class="fas fa-gift text-3xl text-pos-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-pos-heading mb-3">Full, Free Access</h3>
+                        <p class="text-pos-text text-sm">Utilize all current POS Pro features without any cost. Experience premium functionality and help us refine it.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <div class="bg-green-100 p-4 rounded-full mb-6">
+                            <i class="fas fa-lightbulb text-3xl text-pos-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-pos-heading mb-3">Shape the Product</h3>
+                        <p class="text-pos-text text-sm">Your feedback directly influences POS Pro's development. Help us tailor it to be the perfect tool for your business needs.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <div class="bg-green-100 p-4 rounded-full mb-6">
+                            <i class="fas fa-rocket text-3xl text-pos-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-pos-heading mb-3">Early to New Features</h3>
+                        <p class="text-pos-text text-sm">Get a sneak peek and be among the first to try upcoming advanced features as they roll out for testing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="feature-highlights" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-pos-heading">Power-Packed Features at Your Fingertips</h2>
+                    <p class="mt-4 text-lg text-pos-text max-w-2xl mx-auto">POS Pro is designed to simplify your complex retail operations, making your day-to-day tasks smoother and more efficient.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="bg-pos-surface p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-tachometer-alt text-4xl text-pos-accent mb-4"></i>
+                        <h3 class="text-lg font-semibold text-pos-heading mb-2">Intuitive POS</h3>
+                        <p class="text-sm text-pos-text">Fast, touch-friendly sales screen.</p>
+                    </div>
+                    <div class="bg-pos-surface p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-boxes text-4xl text-pos-accent mb-4"></i>
+                        <h3 class="text-lg font-semibold text-pos-heading mb-2">Inventory Control</h3>
+                        <p class="text-sm text-pos-text">Real-time stock tracking.</p>
+                    </div>
+                    <div class="bg-pos-surface p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-chart-line text-4xl text-pos-accent mb-4"></i>
+                        <h3 class="text-lg font-semibold text-pos-heading mb-2">Insightful Reporting</h3>
+                        <p class="text-sm text-pos-text">Data-driven decisions.</p>
+                    </div>
+                    <div class="bg-pos-surface p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-users-cog text-4xl text-pos-accent mb-4"></i>
+                        <h3 class="text-lg font-semibold text-pos-heading mb-2">User Management</h3>
+                        <p class="text-sm text-pos-text">Secure roles & permissions.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="features.html" class="text-pos-accent hover:text-opacity-80 font-semibold text-lg group">
+                        See All Features <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="current-focus" class="py-16 md:py-24 bg-pos-surface">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-pos-heading">Our Current Focus: Stability & Your Feedback</h2>
+                    <p class="mt-4 text-lg text-pos-text max-w-2xl mx-auto">We're committed to building a rock-solid foundation for POS Pro. Your insights are invaluable during this critical phase.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <img src="https://placehold.co/600x400/10bc69/white?text=Team+Collaboration&font=poppins" alt="Team collaborating on POS Pro development" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="order-1 md:order-2 space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-2xl text-pos-accent mr-4 mt-1"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-pos-heading">Rigorous Testing</h3>
+                                <p class="text-pos-text">We're meticulously testing every feature to ensure reliability and performance under various retail scenarios.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-cogs text-2xl text-pos-accent mr-4 mt-1"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-pos-heading">Bug Identification</h3>
+                                <p class="text-pos-text">With your help, we can quickly identify and fix any bugs, making the platform more robust for everyone.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-comments text-2xl text-pos-teal mr-4 mt-1"></i> 
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-pos-heading">Valuable Feedback Loop</h3>
+                                <p class="text-pos-text">Your suggestions on usability and features will directly influence future development and enhancements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="upcoming-features" class="py-16 md:py-24 bg-slate-800 text-pos-contrast">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-pos-contrast">Exciting Features on the Horizon!</h2>
+                    <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">While you enjoy free access to current features, we're developing new capabilities to make POS Pro even more powerful.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-slate-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <div class="bg-pos-accent p-4 rounded-full mb-6">
+                            <i class="fas fa-file-excel text-3xl text-pos-contrast"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-pos-contrast mb-3">Bulk Product Upload</h3>
+                        <p class="text-slate-300 text-sm">Efficiently manage large catalogs with Excel/CSV imports for products and inventory adjustments.</p>
+                    </div>
+                    <div class="bg-slate-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <div class="bg-pos-accent p-4 rounded-full mb-6">
+                            <i class="fas fa-robot text-3xl text-pos-contrast"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-pos-contrast mb-3">AI Invoice Scanning</h3>
+                        <p class="text-slate-300 text-sm">Streamline stock receiving by scanning vendor invoices to auto-populate purchase orders (Conceptual).</p>
+                    </div>
+                    <div class="bg-slate-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <div class="bg-pos-accent p-4 rounded-full mb-6">
+                             <i class="fas fa-users text-3xl text-pos-contrast"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-pos-contrast mb-3">Advanced Loyalty Programs</h3>
+                        <p class="text-slate-300 text-sm">Implement flexible customer loyalty programs to boost retention and repeat business.</p>
+                    </div>
+                </div>
+                <p class="text-center mt-12 text-slate-300">Your early participation helps us prioritize and perfect these enhancements!</p>
+            </div>
+        </section>
+
+        <section id="final-cta" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-pos-heading tracking-tight mb-6">Ready to Transform Your Retail Operations?</h2>
+                <p class="max-w-xl md:max-w-2xl mx-auto text-lg text-pos-text mb-10">
+                    Don't miss this opportunity to use a cutting-edge POS system for free and contribute to its development.
+                </p>
+                <a href="contact.html#signup-form" class="inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-semibold rounded-lg shadow-lg text-pos-contrast bg-pos-accent hover:bg-opacity-80 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-rocket mr-3"></i> Get Started for Free
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                         <img src="assets/logo.webp" alt="POS Pro Logo" class="h-10 w-auto filter brightness-0 invert"> <span class="text-2xl font-bold text-pos-contrast">POS Pro</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-3">The all-in-one POS solution to streamline your retail business and drive growth. Join our free beta today!</p>
+                    <a href="mailto:support@pos-sass.com" class="text-sm text-slate-400 hover:text-pos-accent transition-colors"><i class="fas fa-envelope mr-2"></i>support@pos-sass.com</a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Home</a></li>
+                        <li><a href="features.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Features</a></li>
+                        <li><a href="why-pos-pro.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Why POS Pro?</a></li>
+                        <li><a href="pricing.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Pricing</a></li>
+                        <li><a href="contact.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Contact Us</a></li>
+                        <li><a href="http://blog.pos-sass.com" target="_blank" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Blog (Coming Soon)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Stay Connected</h3>
+                    <p class="text-sm text-slate-400 mb-3">Get updates on new features and developments.</p>
+                    <form action="#" method="POST" class="flex">
+                        <label for="footer-email" class="sr-only">Email address</label>
+                        <input type="email" name="footer-email" id="footer-email" autocomplete="email" required class="w-full px-3 py-2 border border-slate-600 rounded-l-md text-sm text-slate-800 focus:ring-pos-accent focus:border-pos-accent outline-none bg-slate-100" placeholder="Enter your email">
+                        <button type="submit" class="px-4 py-2 border border-transparent rounded-r-md shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pos-accent">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-slate-400 hover:text-pos-accent transition-colors"><span class="sr-only">Facebook</span><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-pos-accent transition-colors"><span class="sr-only">Twitter</span><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-pos-accent transition-colors"><span class="sr-only">LinkedIn</span><i class="fab fa-linkedin-in text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-700 pt-8 text-center">
+                <p class="text-sm text-slate-400">&copy; <span id="currentYear"></span> POS Pro (pos-sass.com). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

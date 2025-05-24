@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - POS Pro | Comprehensive Retail Management</title>
+    <meta name="description" content="Explore the powerful features of POS Pro: Intuitive POS, Inventory Control, Product Management, Advanced Reporting, User Roles, and more. Designed for modern retail.">
+    <meta name="keywords" content="POS features, retail software features, inventory management system, sales reporting tool, product catalog, user permissions POS">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'pos-accent': '#10bc69',      // Primary Green
+                        'pos-heading': '#5f687b',    // Heading Color
+                        'pos-text': '#444444',        // Default Text Color
+                        'pos-teal': '#14b8a6',        // Secondary Accent (Teal)
+                        'pos-surface': '#ffffff',     // Surface Color
+                        'pos-background': '#ffffff',  // Background Color
+                        'pos-contrast': '#ffffff',    // Contrast for text on dark/accented backgrounds
+                    }
+                }
+            }
+        }
+    </script>
+     <style>
+        html { scroll-behavior: smooth; }
+        .feature-card-image { height: 220px; object-fit: cover; }
+        body { color: #444444; background-color: #ffffff; }
+        h1, h2, h3, h4, h5, h6 { color: #5f687b; }
+        .surface-color { background-color: #ffffff; }
+         ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="bg-pos-surface shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="assets/logo.webp" alt="POS Pro Logo" class="h-10 w-auto">
+                        <span class="text-2xl font-bold text-pos-heading">POS Pro</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="features.html" class="bg-green-100 text-pos-accent font-semibold px-3 py-2 rounded-md text-sm hover:bg-green-200 transition-colors">Features</a>
+                    <a href="why-pos-pro.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Why POS Pro?</a>
+                    <a href="pricing.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing (Free Beta)</a>
+                    <a href="contact.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                </div>
+                 <div class="hidden md:block">
+                     <a href="http://demo.pos-sass.com" target="_blank" class="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80 transition-colors">
+                        <i class="fas fa-laptop-code mr-2"></i> Try Demo App
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pos-accent">
+                        <span class="sr-only">Open main menu</span>
+                        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-pos-surface shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="features.html" class="bg-green-100 text-pos-accent block px-3 py-2 rounded-md text-base font-semibold">Features</a>
+                <a href="why-pos-pro.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Why POS Pro?</a>
+                <a href="pricing.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Pricing (Free Beta)</a>
+                <a href="contact.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                 <a href="http://demo.pos-sass.com" target="_blank" class="mt-2 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
+                    <i class="fas fa-laptop-code mr-2"></i> Try Demo App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-pos-accent text-pos-contrast py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-pos-contrast">Explore POS Pro Features</h1>
+            <p class="text-lg sm:text-xl text-green-100 max-w-3xl mx-auto">
+                Discover the comprehensive suite of tools POS Pro offers to revolutionize your retail management, from seamless sales to powerful analytics.
+            </p>
+        </div>
+    </header>
+
+    <main class="py-12 md:py-20 bg-pos-background">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+            <section id="sales-operations" class="mb-16">
+                <div class="mb-10 text-center">
+                    <span class="text-sm font-semibold text-pos-accent uppercase tracking-wider">Sales & Checkout</span>
+                    <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-pos-heading">Effortless Sales & Operations</h2>
+                    <p class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">Speed through transactions and manage daily tasks with unparalleled ease.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/A7F3D0/047857?text=Intuitive+POS+Screen&font=poppins" alt="Intuitive POS Interface" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Intuitive POS Interface</h3>
+                            <p class="text-pos-text text-sm">Fast, easy-to-use sales screen with product grid (category-tabbed), quick product search (name, SKU, barcode), and touch-friendly design for rapid checkouts.</p>
+                        </div>
+                    </div>
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/6EE7B7/047857?text=Order+Hold/Resume&font=poppins" alt="Flexible Order Management" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Flexible Order Management</h3>
+                            <p class="text-pos-text text-sm">Handle multiple concurrent orders efficiently with "Hold" and "Resume" functionality, ensuring no sale is missed during peak hours.</p>
+                        </div>
+                    </div>
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/34D399/047857?text=Thermal+Bill+Mockup&font=poppins" alt="Professional Invoicing" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Professional Invoicing</h3>
+                            <p class="text-pos-text text-sm">Generate clear, 80mm thermal printer-formatted bills with store address and GSTIN, enhancing your brand's professionalism.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="back-office" class="mb-16 py-12 bg-gray-100 rounded-lg">
+                <div class="mb-10 text-center">
+                    <span class="text-sm font-semibold text-pos-accent uppercase tracking-wider">Store Management</span>
+                    <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-pos-heading">Comprehensive Back-Office</h2>
+                    <p class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">Control every aspect of your store from a centralized and powerful dashboard.</p>
+                </div>
+                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/10B981/F0FDFA?text=User+Roles+Interface&font=poppins" alt="User Roles & Permissions" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">User Roles & Permissions</h3>
+                            <p class="text-pos-text text-sm">Secure access with distinct roles (Admin, Manager, Cashier) and granular permissions for data security and operational control.</p>
+                        </div>
+                    </div>
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/059669/F0FDFA?text=Product+Cataloguing&font=poppins" alt="Product Cataloguing" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Product Cataloguing</h3>
+                            <p class="text-pos-text text-sm">Detailed product management including name, description, price, SKU, barcode, images, and active status for a rich catalog.</p>
+                        </div>
+                    </div>
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/047857/F0FDFA?text=Category+Management&font=poppins" alt="Category Management" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Category Management</h3>
+                            <p class="text-pos-text text-sm">Organize products into hierarchical categories specific to each store, simplifying navigation and reporting.</p>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="inventory-control" class="mb-16">
+                <div class="mb-10 text-center">
+                    <span class="text-sm font-semibold text-pos-accent uppercase tracking-wider">Stock Management</span>
+                    <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-pos-heading">Advanced Inventory Control</h2>
+                    <p class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">Maintain perfect stock levels and minimize losses with our robust inventory tools.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/14B8A6/F0FDFA?text=Real-time+Stock&font=poppins" alt="Real-time Stock Tracking" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Real-time Stock Tracking</h3>
+                            <p class="text-pos-text text-sm">Monitor quantity on hand in real-time across all your products and locations to prevent stockouts or overstocking.</p>
+                        </div>
+                    </div>
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 relative">
+                        <span class="absolute top-3 right-3 bg-pos-teal text-pos-contrast text-xs font-semibold px-2 py-1 rounded-full">Coming Soon</span>
+                        <img src="https://placehold.co/600x400/0D9488/F0FDFA?text=Bulk+Upload&font=poppins" alt="Bulk Upload (Excel/Sheets)" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Bulk Upload (Excel/Sheets)</h3>
+                            <p class="text-pos-text text-sm">Efficiently add or update products and adjust inventory in bulk, saving significant time and effort.</p>
+                        </div>
+                    </div>
+                     <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 relative">
+                        <span class="absolute top-3 right-3 bg-pos-teal text-pos-contrast text-xs font-semibold px-2 py-1 rounded-full">Conceptual</span>
+                        <img src="https://placehold.co/600x400/0F766E/F0FDFA?text=AI+Invoice+Scan&font=poppins" alt="AI Invoice Scanning" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">AI Invoice Scanning</h3>
+                            <p class="text-pos-text text-sm">Streamline stock receiving by scanning vendor invoices. An upcoming advanced feature to automate data entry.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reporting-analytics" class="mb-16 py-12 bg-gray-100 rounded-lg">
+                <div class="mb-10 text-center">
+                    <span class="text-sm font-semibold text-pos-accent uppercase tracking-wider">Analytics</span>
+                    <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-pos-heading">Powerful Insights & Reporting</h2>
+                    <p class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">Make informed decisions with comprehensive, real-time data and customizable reports.</p>
+                </div>
+                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/5F687B/E0E7FF?text=Admin+Dashboard&font=poppins" alt="Real-time Dashboard" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Role-Based Dashboards</h3>
+                            <p class="text-pos-text text-sm">Admin, Manager, and Cashier views for tailored insights into system-wide, store-specific, or individual performance.</p>
+                        </div>
+                    </div>
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/4B5563/E0E7FF?text=Detailed+Reports&font=poppins" alt="Detailed Reports" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Detailed Reports</h3>
+                            <p class="text-pos-text text-sm">Access sales summaries, user performance, store comparisons, best-selling products, and category-wise sales reports.</p>
+                        </div>
+                    </div>
+                    <div class="bg-pos-surface rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/600x400/374151/E0E7FF?text=Report+Filters&font=poppins" alt="Advanced Filtering" class="w-full feature-card-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-pos-heading mb-2">Advanced Filtering & PDF</h3>
+                            <p class="text-pos-text text-sm">Filter reports by date presets, custom ranges, store, user, and category. Download detailed A4 PDFs.</p>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="technology" class="mb-16">
+                <div class="text-center">
+                    <span class="text-sm font-semibold text-pos-accent uppercase tracking-wider">Our Stack</span>
+                    <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-pos-heading">Modern & Reliable Technology</h2>
+                    <p class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">Built on a robust and secure foundation to ensure your business runs smoothly.</p>
+                </div>
+                <div class="mt-10 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-pos-surface p-8 rounded-xl shadow-lg text-center">
+                        <i class="fab fa-java text-6xl text-pos-accent mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-pos-heading">Spring Boot Backend</h3>
+                        <p class="text-pos-text mt-2">Ensures high performance, scalability, and robust security for all your critical data and operations.</p>
+                    </div>
+                    <div class="bg-pos-surface p-8 rounded-xl shadow-lg text-center">
+                         <i class="fab fa-angular text-6xl text-red-500 mb-4"></i> 
+                        <h3 class="text-2xl font-semibold text-pos-heading">Angular Frontend</h3>
+                        <p class="text-pos-text mt-2">Delivers a responsive, fast, and intuitive user experience across all devices for seamless interaction.</p>
+                    </div>
+                </div>
+                 <p class="text-center mt-8 text-pos-text">
+                    <i class="fas fa-shield-alt text-pos-accent mr-2"></i>Secure JWT-based authentication protects your data.
+                </p>
+            </section>
+
+             <section class="text-center py-12 bg-pos-teal text-pos-contrast rounded-lg shadow-xl">
+                <h2 class="text-3xl font-bold mb-4 text-pos-contrast">Ready to Experience the Difference?</h2>
+                <p class="text-teal-100 mb-8 text-lg max-w-xl mx-auto">Join our free Early Access Program and take your retail business to the next level with POS Pro.</p>
+                <a href="contact.html#demo-request" class="bg-pos-surface text-pos-teal font-bold py-3 px-8 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 text-lg mr-4">Request a Free Demo</a>
+                <a href="http://demo.pos-sass.com" target="_blank" class="bg-pos-accent hover:bg-opacity-80 text-pos-contrast font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 text-lg">Try POS Pro Now</a>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="assets/logo.webp" alt="POS Pro Logo" class="h-10 w-auto filter brightness-0 invert">
+                        <span class="text-2xl font-bold text-pos-contrast">POS Pro</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-3">The all-in-one POS solution. Join our free beta!</p>
+                    <a href="mailto:support@pos-sass.com" class="text-sm text-slate-400 hover:text-pos-accent transition-colors"><i class="fas fa-envelope mr-2"></i>support@pos-sass.com</a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Home</a></li>
+                        <li><a href="features.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Features</a></li>
+                        <li><a href="why-pos-pro.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Why POS Pro?</a></li>
+                        <li><a href="pricing.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Stay Connected</h3>
+                     <form action="#" method="POST" class="flex">
+                        <input type="email" name="footer-email" required class="w-full px-3 py-2 border border-slate-600 rounded-l-md text-sm text-slate-800 focus:ring-pos-accent focus:border-pos-accent outline-none bg-slate-100" placeholder="Your email">
+                        <button type="submit" class="px-4 py-2 border border-transparent rounded-r-md shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center">
+                <p class="text-sm text-slate-400">&copy; <span id="currentYear"></span> POS Pro (pos-sass.com). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
