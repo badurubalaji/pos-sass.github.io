@@ -14,6 +14,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init('83vUgpwqChya0dHZV');
+  })();
+</script>
+
+
+
 
     <script>
         tailwind.config = {
@@ -446,5 +455,18 @@
             });
         });
     </script>
+	<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_enc3c3n', 'template_8f9mer9', this)
+      .then(function(response) {
+        console.log('Email sent!', response.status, response.text);
+        alert('Email sent successfully!');
+      }, function(error) {
+        console.error('Error sending email:', error);
+        alert('Oops! Something went wrong.');
+      });
+  });
+</script>
 </body>
 </html>
