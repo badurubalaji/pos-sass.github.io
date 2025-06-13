@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
-    <title>Pricing - POS Pro | Free Early Access Program</title>
-    <meta name="description" content="POS Pro is currently FREE during our Early Access Program. Get full access to all features, help us test, and shape the future of retail POS.">
-    <meta name="keywords" content="POS pricing, free POS system, early access POS, retail POS cost, POS Pro free">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+        <title>Pricing - POS Pro | Free Early Access Program</title>
+        <meta name="description"
+            content="POS Pro is currently FREE during our Early Access Program. Get full access to all features, help us test, and shape the future of retail POS.">
+        <meta name="keywords"
+            content="POS pricing, free POS system, early access POS, retail POS cost, POS Pro free">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-WWP9T6KDG1"></script>
+        <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <script>
+  gtag('config', 'G-WWP9T6KDG1');
+</script>
+        <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -34,7 +48,7 @@
             }
         }
     </script>
-    <style>
+        <style>
         html { scroll-behavior: smooth; }
         body { color: #444444; background-color: #ffffff; } /* --default-color & --background-color */
         h1, h2, h3, h4, h5, h6 { color: #5f687b; } /* --heading-color */
@@ -44,215 +58,383 @@
         ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #555; }
     </style>
-</head>
-<body class="font-sans antialiased">
+    </head>
+    <body class="font-sans antialiased">
 
-    <nav class="bg-pos-surface shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <img src="assets/logo.webp" alt="POS Pro Logo" class="h-10 w-auto">
-                        <span class="text-2xl font-bold text-pos-heading">POS Pro</span>
-                    </a>
+        <nav class="bg-pos-surface shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex-shrink-0">
+                        <a href="index.html"
+                            class="flex items-center space-x-2">
+                            <img src="assets/logo.webp" alt="POS Pro Logo"
+                                class="h-10 w-auto">
+                            <span
+                                class="text-2xl font-bold text-pos-heading">POS
+                                Pro</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="index.html"
+                            class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="features.html"
+                            class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                        <a href="why-pos-pro.html"
+                            class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Why
+                            POS Pro?</a>
+                        <a href="pricing.html"
+                            class="bg-green-100 text-pos-accent font-semibold px-3 py-2 rounded-md text-sm hover:bg-green-200 transition-colors">Pricing
+                            (Free Beta)</a>
+                        <a href="contact.html"
+                            class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="http://demo.pos-sass.com" target="_blank"
+                            class="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80 transition-colors">
+                            <i class="fas fa-laptop-code mr-2"></i> Try Demo App
+                        </a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pos-accent">
+                            <span class="sr-only">Open main menu</span>
+                            <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-1">
-                    <a href="index.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-                    <a href="features.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
-                    <a href="why-pos-pro.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Why POS Pro?</a>
-                    <a href="pricing.html" class="bg-green-100 text-pos-accent font-semibold px-3 py-2 rounded-md text-sm hover:bg-green-200 transition-colors">Pricing (Free Beta)</a>
-                    <a href="contact.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
-                </div>
-                 <div class="hidden md:block">
-                     <a href="http://demo.pos-sass.com" target="_blank" class="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80 transition-colors">
+            </div>
+            <div id="mobile-menu"
+                class="md:hidden hidden bg-pos-surface shadow-lg">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="index.html"
+                        class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="features.html"
+                        class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                    <a href="why-pos-pro.html"
+                        class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Why
+                        POS Pro?</a>
+                    <a href="pricing.html"
+                        class="bg-green-100 text-pos-accent block px-3 py-2 rounded-md text-base font-semibold">Pricing
+                        (Free Beta)</a>
+                    <a href="contact.html"
+                        class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                    <a href="http://demo.pos-sass.com" target="_blank"
+                        class="mt-2 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
                         <i class="fas fa-laptop-code mr-2"></i> Try Demo App
                     </a>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pos-accent">
-                        <span class="sr-only">Open main menu</span>
-                        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
             </div>
-        </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-pos-surface shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="features.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Features</a>
-                <a href="why-pos-pro.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Why POS Pro?</a>
-                <a href="pricing.html" class="bg-green-100 text-pos-accent block px-3 py-2 rounded-md text-base font-semibold">Pricing (Free Beta)</a>
-                <a href="contact.html" class="text-pos-text hover:bg-gray-100 hover:text-pos-accent block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                 <a href="http://demo.pos-sass.com" target="_blank" class="mt-2 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
-                    <i class="fas fa-laptop-code mr-2"></i> Try Demo App
-                </a>
+        </nav>
+
+        <header class="bg-pos-teal text-pos-contrast py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1
+                    class="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-pos-contrast">Join
+                    the POS Pro Early Access Program: It's Free!</h1>
+                <p class="text-lg sm:text-xl text-teal-100 max-w-3xl mx-auto">
+                    We believe in delivering exceptional value. Right now, POS
+                    Pro is available with all its powerful features completely
+                    free of charge as we refine our platform with early users
+                    like you.
+                </p>
             </div>
-        </div>
-    </nav>
+        </header>
 
-    <header class="bg-pos-teal text-pos-contrast py-16 md:py-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-pos-contrast">Join the POS Pro Early Access Program: It's Free!</h1>
-            <p class="text-lg sm:text-xl text-teal-100 max-w-3xl mx-auto">
-                We believe in delivering exceptional value. Right now, POS Pro is available with all its powerful features completely free of charge as we refine our platform with early users like you.
-            </p>
-        </div>
-    </header>
+        <main class="py-12 md:py-20 bg-pos-background">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-    <main class="py-12 md:py-20 bg-pos-background">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <section id="free-access" class="mb-16 text-center">
+                    <div
+                        class="max-w-3xl mx-auto bg-pos-surface p-8 md:p-12 rounded-xl shadow-xl">
+                        <i
+                            class="fas fa-gift text-6xl text-pos-accent mb-6"></i>
+                        <h2 class="text-3xl font-bold text-pos-heading mb-4">Get
+                            Full Access to POS Pro – Absolutely Free!</h2>
+                        <p class="text-pos-text mb-6 text-lg">
+                            POS Pro is currently in an active development and
+                            refinement phase. We're offering full, free access
+                            to passionate retailers who want to experience a
+                            modern POS solution and help us make it even better.
+                        </p>
+                        <p class="text-pos-text mb-8 text-lg">
+                            By joining our Early Access Program, you get to use
+                            all available features of POS Pro without any
+                            charge. In return, we value your feedback on
+                            usability, stability, and any bugs you might
+                            encounter. This collaborative approach helps us
+                            build a truly exceptional product.
+                        </p>
+                        <a href="contact.html#signup-form"
+                            class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-lg font-semibold rounded-lg shadow-lg text-pos-contrast bg-pos-accent hover:bg-opacity-80 transform hover:scale-105 transition-transform duration-300">
+                            <i class="fas fa-user-plus mr-3"></i> Join Early
+                            Access Now
+                        </a>
+                    </div>
+                </section>
 
-            <section id="free-access" class="mb-16 text-center">
-                <div class="max-w-3xl mx-auto bg-pos-surface p-8 md:p-12 rounded-xl shadow-xl">
-                    <i class="fas fa-gift text-6xl text-pos-accent mb-6"></i>
-                    <h2 class="text-3xl font-bold text-pos-heading mb-4">Get Full Access to POS Pro – Absolutely Free!</h2>
-                    <p class="text-pos-text mb-6 text-lg">
-                        POS Pro is currently in an active development and refinement phase. We're offering full, free access to passionate retailers who want to experience a modern POS solution and help us make it even better.
-                    </p>
-                    <p class="text-pos-text mb-8 text-lg">
-                        By joining our Early Access Program, you get to use all available features of POS Pro without any charge. In return, we value your feedback on usability, stability, and any bugs you might encounter. This collaborative approach helps us build a truly exceptional product.
-                    </p>
-                    <a href="contact.html#signup-form" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-lg font-semibold rounded-lg shadow-lg text-pos-contrast bg-pos-accent hover:bg-opacity-80 transform hover:scale-105 transition-transform duration-300">
-                        <i class="fas fa-user-plus mr-3"></i> Join Early Access Now
-                    </a>
-                </div>
-            </section>
-
-            <section id="whats-included" class="mb-16 py-12 bg-gray-100 rounded-lg">
-                <div class="text-center mb-10">
-                     <h2 class="text-3xl sm:text-4xl font-bold text-pos-heading">What's Included in the Free Early Access?</h2>
-                     <p class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">You get access to a comprehensive suite of features designed to run your retail business efficiently.</p>
-                </div>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 px-4">
-                    <div class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
-                        <i class="fas fa-receipt text-2xl text-pos-accent mr-4"></i>
-                        <span class="text-pos-text">Unlimited Transactions</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
-                        <i class="fas fa-box-open text-2xl text-pos-accent mr-4"></i>
-                        <span class="text-pos-text">Unlimited Products & Categories</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
-                        <i class="fas fa-dolly-flatbed text-2xl text-pos-accent mr-4"></i>
-                        <span class="text-pos-text">Comprehensive Inventory Management</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
-                        <i class="fas fa-chart-bar text-2xl text-pos-accent mr-4"></i>
-                        <span class="text-pos-text">Advanced Reporting & Analytics</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
-                        <i class="fas fa-users text-2xl text-pos-accent mr-4"></i>
-                        <span class="text-pos-text">User Roles & Permissions</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
-                        <i class="fas fa-cloud-upload-alt text-2xl text-pos-accent mr-4"></i>
-                        <span class="text-pos-text">Cloud Backup & Security</span>
-                    </div>
-                     <div class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
-                        <i class="fas fa-store text-2xl text-pos-accent mr-4"></i>
-                        <span class="text-pos-text">Store Management (Admin)</span>
-                    </div>
-                     <div class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
-                        <i class="fas fa-headset text-2xl text-pos-accent mr-4"></i>
-                        <span class="text-pos-text">Priority Support for Early Adopters</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="future-pricing-faq" class="mb-12">
-                 <div class="max-w-4xl mx-auto">
+                <section id="whats-included"
+                    class="mb-16 py-12 bg-gray-100 rounded-lg">
                     <div class="text-center mb-10">
-                        <h2 class="text-3xl sm:text-4xl font-bold text-pos-heading">Our Philosophy & Your Questions</h2>
-                        <p class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">Transparency is key. Here's what to expect and answers to common questions.</p>
+                        <h2
+                            class="text-3xl sm:text-4xl font-bold text-pos-heading">What's
+                            Included in the Free Early Access?</h2>
+                        <p
+                            class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">You
+                            get access to a comprehensive suite of features
+                            designed to run your retail business
+                            efficiently.</p>
                     </div>
-
-                    <div class="bg-pos-surface p-8 rounded-xl shadow-lg mb-10">
-                        <h3 class="text-2xl font-semibold text-pos-heading mb-3"><i class="fas fa-bullseye-pointer mr-2 text-pos-accent"></i>Future Pricing Philosophy</h3>
-                        <p class="text-pos-text">
-                            Our goal is to create the best POS solution for retail businesses. While POS Pro is free to use during the Early Access Program, we plan to introduce transparent and fair pricing tiers in the future to support ongoing development, server costs, and new advanced features.
-                        </p>
-                        <p class="text-pos-text mt-2">
-                            Rest assured, we will provide ample notice (at least 30-60 days) before any pricing changes. Early adopters like you will always be valued, and we often provide special considerations or discounts for those who help us grow.
-                        </p>
+                    <div
+                        class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 px-4">
+                        <div
+                            class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
+                            <i
+                                class="fas fa-receipt text-2xl text-pos-accent mr-4"></i>
+                            <span class="text-pos-text">Unlimited
+                                Transactions</span>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
+                            <i
+                                class="fas fa-box-open text-2xl text-pos-accent mr-4"></i>
+                            <span class="text-pos-text">Unlimited Products &
+                                Categories</span>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
+                            <i
+                                class="fas fa-dolly-flatbed text-2xl text-pos-accent mr-4"></i>
+                            <span class="text-pos-text">Comprehensive Inventory
+                                Management</span>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
+                            <i
+                                class="fas fa-chart-bar text-2xl text-pos-accent mr-4"></i>
+                            <span class="text-pos-text">Advanced Reporting &
+                                Analytics</span>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
+                            <i
+                                class="fas fa-users text-2xl text-pos-accent mr-4"></i>
+                            <span class="text-pos-text">User Roles &
+                                Permissions</span>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
+                            <i
+                                class="fas fa-cloud-upload-alt text-2xl text-pos-accent mr-4"></i>
+                            <span class="text-pos-text">Cloud Backup &
+                                Security</span>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
+                            <i
+                                class="fas fa-store text-2xl text-pos-accent mr-4"></i>
+                            <span class="text-pos-text">Store Management
+                                (Admin)</span>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-pos-surface rounded-lg shadow-md">
+                            <i
+                                class="fas fa-headset text-2xl text-pos-accent mr-4"></i>
+                            <span class="text-pos-text">Priority Support for
+                                Early Adopters</span>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="bg-pos-surface p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-pos-heading mb-6"><i class="fas fa-question-circle mr-2 text-pos-accent"></i>Frequently Asked Questions</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <h4 class="text-lg font-medium text-pos-heading">Is POS Pro really free right now?</h4>
-                                <p class="text-pos-text mt-1">Yes! During our Early Access Program, POS Pro is completely free to use with access to all currently available features. We want your feedback to make it perfect.</p>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-medium text-pos-heading">What is expected of me as an Early Access user?</h4>
-                                <p class="text-pos-text mt-1">We encourage you to use POS Pro for your daily retail operations. Your primary role is to provide feedback on usability, report any bugs you encounter, and suggest improvements. Your active usage is invaluable.</p>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-medium text-pos-heading">Will I have to pay when new features like Bulk Upload or AI scanning are added?</h4>
-                                <p class="text-pos-text mt-1">During the Early Access Program, you'll likely get to test many new features for free as they are introduced for testing and refinement. We will be transparent about any future pricing models for advanced features well in advance.</p>
-                            </div>
-                             <div>
-                                <h4 class="text-lg font-medium text-pos-heading">What happens if POS Pro introduces pricing I don't agree with or if the service is decommissioned?</h4>
-                                <p class="text-pos-text mt-1">We are committed to transparency and fairness. As outlined in our <a href="terms.html" class="text-pos-accent hover:underline">Terms & Conditions</a>, if we transition to a paid model you don't wish to adopt, or in the unlikely event we decide to decommission the service, we will provide a mechanism for you to download your core business data (like product lists, sales history, inventory data) in a common format.</p>
+                <section id="future-pricing-faq" class="mb-12">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-10">
+                            <h2
+                                class="text-3xl sm:text-4xl font-bold text-pos-heading">Our
+                                Philosophy & Your Questions</h2>
+                            <p
+                                class="mt-3 text-lg text-pos-text max-w-2xl mx-auto">Transparency
+                                is key. Here's what to expect and answers to
+                                common questions.</p>
+                        </div>
+
+                        <div
+                            class="bg-pos-surface p-8 rounded-xl shadow-lg mb-10">
+                            <h3
+                                class="text-2xl font-semibold text-pos-heading mb-3"><i
+                                    class="fas fa-bullseye-pointer mr-2 text-pos-accent"></i>Future
+                                Pricing Philosophy</h3>
+                            <p class="text-pos-text">
+                                Our goal is to create the best POS solution for
+                                retail businesses. While POS Pro is free to use
+                                during the Early Access Program, we plan to
+                                introduce transparent and fair pricing tiers in
+                                the future to support ongoing development,
+                                server costs, and new advanced features.
+                            </p>
+                            <p class="text-pos-text mt-2">
+                                Rest assured, we will provide ample notice (at
+                                least 30-60 days) before any pricing changes.
+                                Early adopters like you will always be valued,
+                                and we often provide special considerations or
+                                discounts for those who help us grow.
+                            </p>
+                        </div>
+
+                        <div class="bg-pos-surface p-8 rounded-xl shadow-lg">
+                            <h3
+                                class="text-2xl font-semibold text-pos-heading mb-6"><i
+                                    class="fas fa-question-circle mr-2 text-pos-accent"></i>Frequently
+                                Asked Questions</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4
+                                        class="text-lg font-medium text-pos-heading">Is
+                                        POS Pro really free right now?</h4>
+                                    <p class="text-pos-text mt-1">Yes! During
+                                        our Early Access Program, POS Pro is
+                                        completely free to use with access to
+                                        all currently available features. We
+                                        want your feedback to make it
+                                        perfect.</p>
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-lg font-medium text-pos-heading">What
+                                        is expected of me as an Early Access
+                                        user?</h4>
+                                    <p class="text-pos-text mt-1">We encourage
+                                        you to use POS Pro for your daily retail
+                                        operations. Your primary role is to
+                                        provide feedback on usability, report
+                                        any bugs you encounter, and suggest
+                                        improvements. Your active usage is
+                                        invaluable.</p>
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-lg font-medium text-pos-heading">Will
+                                        I have to pay when new features like
+                                        Bulk Upload or AI scanning are
+                                        added?</h4>
+                                    <p class="text-pos-text mt-1">During the
+                                        Early Access Program, you'll likely get
+                                        to test many new features for free as
+                                        they are introduced for testing and
+                                        refinement. We will be transparent about
+                                        any future pricing models for advanced
+                                        features well in advance.</p>
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-lg font-medium text-pos-heading">What
+                                        happens if POS Pro introduces pricing I
+                                        don't agree with or if the service is
+                                        decommissioned?</h4>
+                                    <p class="text-pos-text mt-1">We are
+                                        committed to transparency and fairness.
+                                        As outlined in our <a href="terms.html"
+                                            class="text-pos-accent hover:underline">Terms
+                                            & Conditions</a>, if we transition
+                                        to a paid model you don't wish to adopt,
+                                        or in the unlikely event we decide to
+                                        decommission the service, we will
+                                        provide a mechanism for you to download
+                                        your core business data (like product
+                                        lists, sales history, inventory data) in
+                                        a common format.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="text-center py-12 bg-pos-teal text-pos-contrast rounded-lg shadow-xl">
-                <h2 class="text-3xl font-bold mb-4 text-pos-contrast">Still Have Questions or Ready to Start?</h2>
-                <p class="text-teal-100 mb-8 text-lg max-w-xl mx-auto">We're here to help you get the most out of POS Pro. Reach out to us or sign up today!</p>
-                <a href="contact.html" class="bg-pos-surface text-pos-teal font-bold py-3 px-8 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 text-lg mr-4">Contact Support</a>
-                <a href="contact.html#signup-form" class="bg-pos-accent hover:bg-opacity-80 text-pos-contrast font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 text-lg">Sign Up for Free Access</a>
-            </section>
+                <section
+                    class="text-center py-12 bg-pos-teal text-pos-contrast rounded-lg shadow-xl">
+                    <h2 class="text-3xl font-bold mb-4 text-pos-contrast">Still
+                        Have Questions or Ready to Start?</h2>
+                    <p class="text-teal-100 mb-8 text-lg max-w-xl mx-auto">We're
+                        here to help you get the most out of POS Pro. Reach out
+                        to us or sign up today!</p>
+                    <a href="contact.html"
+                        class="bg-pos-surface text-pos-teal font-bold py-3 px-8 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 text-lg mr-4">Contact
+                        Support</a>
+                    <a href="contact.html#signup-form"
+                        class="bg-pos-accent hover:bg-opacity-80 text-pos-contrast font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 text-lg">Sign
+                        Up for Free Access</a>
+                </section>
 
-        </div>
-    </main>
+            </div>
+        </main>
 
-    <footer class="bg-slate-800 text-slate-300">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <img src="assets/logo.webp" alt="POS Pro Logo" class="h-10 w-auto filter brightness-0 invert">
-                        <span class="text-2xl font-bold text-pos-contrast">POS Pro</span>
+        <footer class="bg-slate-800 text-slate-300">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <img src="assets/logo.webp" alt="POS Pro Logo"
+                                class="h-10 w-auto filter brightness-0 invert">
+                            <span
+                                class="text-2xl font-bold text-pos-contrast">POS
+                                Pro</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-3">The all-in-one
+                            POS solution. Join our free beta!</p>
+                        <a href="mailto:support@pos-sass.com"
+                            class="text-sm text-slate-400 hover:text-pos-accent transition-colors"><i
+                                class="fas fa-envelope mr-2"></i>support@pos-sass.com</a>
                     </div>
-                    <p class="text-sm text-slate-400 mb-3">The all-in-one POS solution. Join our free beta!</p>
-                    <a href="mailto:support@pos-sass.com" class="text-sm text-slate-400 hover:text-pos-accent transition-colors"><i class="fas fa-envelope mr-2"></i>support@pos-sass.com</a>
+                    <div>
+                        <h3
+                            class="text-lg font-semibold text-pos-contrast mb-4">Quick
+                            Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html"
+                                    class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Home</a></li>
+                            <li><a href="features.html"
+                                    class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Features</a></li>
+                            <li><a href="why-pos-pro.html"
+                                    class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Why
+                                    POS Pro?</a></li>
+                            <li><a href="pricing.html"
+                                    class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-lg font-semibold text-pos-contrast mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="privacy.html"
+                                    class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Privacy
+                                    Policy</a></li>
+                            <li><a href="terms.html"
+                                    class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Terms
+                                    & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-lg font-semibold text-pos-contrast mb-4">Stay
+                            Connected</h3>
+                        <form action="#" method="POST" class="flex">
+                            <input type="email" name="footer-email" required
+                                class="w-full px-3 py-2 border border-slate-600 rounded-l-md text-sm text-slate-800 focus:ring-pos-accent focus:border-pos-accent outline-none bg-slate-100"
+                                placeholder="Your email">
+                            <button type="submit"
+                                class="px-4 py-2 border border-transparent rounded-r-md shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Home</a></li>
-                        <li><a href="features.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Features</a></li>
-                        <li><a href="why-pos-pro.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Why POS Pro?</a></li>
-                        <li><a href="pricing.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><a href="privacy.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="text-sm text-slate-400 hover:text-pos-accent transition-colors">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-pos-contrast mb-4">Stay Connected</h3>
-                     <form action="#" method="POST" class="flex">
-                        <input type="email" name="footer-email" required class="w-full px-3 py-2 border border-slate-600 rounded-l-md text-sm text-slate-800 focus:ring-pos-accent focus:border-pos-accent outline-none bg-slate-100" placeholder="Your email">
-                        <button type="submit" class="px-4 py-2 border border-transparent rounded-r-md shadow-sm text-sm font-medium text-pos-contrast bg-pos-accent hover:bg-opacity-80">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                <div class="border-t border-slate-700 pt-8 text-center">
+                    <p class="text-sm text-slate-400">&copy; <span
+                            id="currentYear"></span> POS Pro (pos-sass.com). All
+                        Rights Reserved.</p>
                 </div>
             </div>
-            <div class="border-t border-slate-700 pt-8 text-center">
-                <p class="text-sm text-slate-400">&copy; <span id="currentYear"></span> POS Pro (pos-sass.com). All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
